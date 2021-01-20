@@ -165,14 +165,14 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
 
     .content__img {width: 100vw;}
     .content__img img {height: 100%; width: auto}
-    .content__img:nth-child(1) {left:0;top:0;}
-    .content__img:nth-child(2) {left:100vw;top:0;}
-    .content__img:nth-child(3) {left:200vw;top:0;}
-    .content__img:nth-child(4) {left:300vw;top:0;}
-    .content__img:nth-child(5) {left:400vw;top:0;}
-    .content__img:nth-child(6) {left:500vw;top:0;}
-    .content__img:nth-child(7) {left:600vw;top:0;}
-    .content__img:nth-child(8) {left:700vw;top:0;}
+    .content__img:nth-child(1) {left:-100vw;top:0;}
+    .content__img:nth-child(2) {left:0vw;top:0;}
+    .content__img:nth-child(3) {left:100vw;top:0;}
+    .content__img:nth-child(4) {left:200vw;top:0;}
+    .content__img:nth-child(5) {left:300vw;top:0;}
+    .content__img:nth-child(6) {left:400vw;top:0;}
+    .content__img:nth-child(7) {left:500vw;top:0;}
+    .content__img:nth-child(8) {left:600vw;top:0;}
 }
 </style>
 </head>
@@ -435,7 +435,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
                 if (windowW >= 768 && nowWindowW < 768) {
                     var $lists = $(".slide-imgs");
                     $lists.each(function(){
-                        var moveLeft = 0;
+                        var moveLeft = -100;
                         $(this).find(".imgWrap").each(function(){
                             var $img = $(this);
                             $img.css("left", moveLeft + "%");
@@ -527,17 +527,55 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
                             });
                         });
                     } else {
-                        var beforeLeft = 0;
+                        var imgW = $imgLi.eq(0).outerWidth();
+                        var moveL = $(window).width();
+                        var beforeX = 0;
+                        var nextReady = false;
                         $imgLi.each(function(){
                             const left = $(this).offset().left;
+                            
+                            var movePosi = dir === "left" ? left - moveL:left + moveL
                             $(this).animate({
-                                "left": `${left - windowW}px`
+                                "left": `${movePosi}px`
                             }, 500, function(){
-                                if($(this).offset().left < 0) {
-                                    var backTo = ($imgLi.length - 1) * 100
-                                    $(this).css("left", backTo + "%")
+                                if($(this).hasClass("mostLeft-ImgWrap") && dir === "left" && !nextReady){
+                                    
+                                    var $mostRightImg = $list.find(".mostRight-ImgWrap");
+                                    var backTo = $mostRightImg.offset().left + moveL;
+                                    $(this).css("left", backTo + "px")
+
+                                    $mostRightImg.removeClass("mostRight-ImgWrap");
+                                    $(this).removeClass("mostLeft-ImgWrap");
+                                    $(this).addClass("mostRight-ImgWrap");
+
+                                    var nowMostLeftImg = $(this).next();
+                                    if(nowMostLeftImg.length > 0) {
+                                        
+                                        nowMostLeftImg.addClass("mostLeft-ImgWrap");
+                                    } else {
+                                        $imgLi.eq(0).addClass("mostLeft-ImgWrap");
+                                    }
+                                    nextReady = true
                                 }
-                                moveImgLi = false;
+                                if($(this).hasClass("mostRight-ImgWrap") && dir === "right" && !nextReady){
+                                    var $mostRightImg = $list.find(".mostLeft-ImgWrap");
+                                    var backTo = $mostRightImg.offset().left - moveL;
+                                    $(this).css("left", backTo + "px")
+                                    $mostRightImg.removeClass("mostLeft-ImgWrap");
+                                    $(this).removeClass("mostRight-ImgWrap");
+                                    $(this).addClass("mostLeft-ImgWrap");
+
+                                    var nowMostLeftImg = $(this).prev();
+                                    if(nowMostLeftImg.length > 0) {
+                                        
+                                        nowMostLeftImg.addClass("mostRight-ImgWrap");
+                                    } else {
+                                        $imgLi.eq($imgLi.length - 1).addClass("mostRight-ImgWrap");
+                                    }
+                                    nextReady = true
+                                }
+                                
+                                moveImgLi = false
                             });
                         });
                     }
