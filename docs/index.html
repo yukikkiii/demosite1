@@ -263,13 +263,13 @@
     }
 }
 
+
 var beforeScroll = $(window).scrollTop();
 $(window).scroll(function() {
                 
     // windowがスクロールされた時に実行する処理
     const $mv = $(".mv");
     const mvBottom = $mv.outerHeight() + $mv.offset().top;
-    console.log(mvBottom)
     const menu = $(".menu li a").each(function(){
         const $li = $(this);
         checChangeColor($li, mvBottom);
@@ -280,6 +280,37 @@ $(window).scroll(function() {
 
     const $spMenu = $("#js-hamburger");
     checChangeColor($spMenu, mvBottom);
+
+    var nowScroll = $(window).scrollTop();
+    var sa = nowScroll - beforeScroll;
+    beforeScroll = nowScroll
+
+    var agent = navigator.userAgent;  
+    if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){  
+        $(".imgWrap > div").each(function(){
+            var nowTop = $(window).scrollTop();
+            var nowBottom = nowTop + $(window).outerHeight();
+            var imgTop = $(this).offset().top
+            if( imgTop > nowTop && nowBottom > imgTop) {
+                console.log("入ってる")
+                var matrix = $(this).css("transform");
+                const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
+                console.log(matrix)
+                console.log(m)
+                var y = !m ? m[5] : 0;
+                $(this).css({
+                    "transform": `translateY(${y - sa}px)`
+                })
+            } else {
+                $(this).css({
+                    "transform": `translateY(0px)`
+                })
+            }
+        })
+    }
+
+
+
 });
         
     </script>
