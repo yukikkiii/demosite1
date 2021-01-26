@@ -96,7 +96,7 @@
                             テキストテキストテキストテキストテキスト
                         </p>
                         <div class="concept__img imgWrap js-scroll-visible" type="addClass" add="concept__img--visible">
-                            <div data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
+                            <div data-scroll data-scroll-speed="1" data-scroll-direction="vertical" id="test">
                             <img style="width: 120%" src="img/me.jpg" alt="" class="img">
                         </div>
                         </div>
@@ -291,15 +291,16 @@ $(window).scroll(function() {
             var nowTop = $(window).scrollTop();
             var nowBottom = nowTop + $(window).outerHeight();
             var imgTop = $(this).offset().top
-            if( imgTop > nowTop && nowBottom > imgTop) {
-                console.log("入ってる")
+            var imgBottom = imgTop + $(this).outerHeight();
+            if( (imgTop > nowTop && nowBottom > imgTop) || (imgBottom > nowTop && nowBottom > imgBottom)) {
                 var matrix = $(this).css("transform");
                 const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
                 console.log(matrix)
                 console.log(m)
-                var y = !m ? m[5] : 0;
+                var y = m ? m[5] : 0;
+                console.log(y)
                 $(this).css({
-                    "transform": `translateY(${y - sa}px)`
+                    "transform": `translateY(${y - sa /10}px)`
                 })
             } else {
                 $(this).css({
