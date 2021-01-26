@@ -22,7 +22,7 @@
 
 </head>
 <body>
-    <div id="js-scroll" data-scroll-container>
+    <div>
     <header class="header" id="header">
         <div class="header__inner">
             <div class="header__logo logo">
@@ -54,9 +54,9 @@
     </header>
 
     <main class="main">
-        <div class="main__inner" data-scroll-section>
-            <div class="mv" data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
-                <div class="mv__bg"></div>
+        <div class="main__inner">
+            <div class="mv" style="position: fixed;top:0;left:0;right:0">
+                <div class="mv__bg imgAnime"></div>
                 <div class="mv__content">
                     <h1 class="h1">
                         <span class="js-scroll-visible" delay="40">本</span>
@@ -74,6 +74,7 @@
                     </p>
                 </div>
             </div>
+            <div style="padding-top: 100vh" id="js-scroll" data-scroll-container>
             <div class="contents">
                 <section id="concept" class="section">
                     <div class="section__inner concept__inner maxW mC">
@@ -96,7 +97,7 @@
                             テキストテキストテキストテキストテキスト
                         </p>
                         <div class="concept__img imgWrap js-scroll-visible" type="addClass" add="concept__img--visible">
-                            <div data-scroll data-scroll-speed="1" data-scroll-direction="vertical" id="test">
+                            <div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical" id="test">
                             <img style="width: 120%" src="img/me.jpg" alt="" class="img">
                         </div>
                         </div>
@@ -109,7 +110,7 @@
                         <div class="about__content">
                             <div class="about__leftContent">
                                 <div class="about__img imgWrap">
-                                    <div data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
+                                    <div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
                                     <img alt="" class="img" src="img/me-main.jpg">
                                 </div>
                                 </div>
@@ -164,14 +165,14 @@
                             <div class="hover-cursor slide-counsel-imgs" data="counseling">
                                 <div class="content__imgList">
                                     <div class="content__imgListInner" list="counseling">
-                                        <div class="content__img imgWrap" order="1"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="2"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="3"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="4"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="5"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="6"><div><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="7"><div><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="8"><div><img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="1"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="2"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="3"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="4"><div class="imgAnime"><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="5"><div class="imgAnime"><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="6"><div class="imgAnime"><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="7"><div class="imgAnime"><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="8"><div class="imgAnime"><img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
                                     </div>
                                 </div>
                             </div>
@@ -196,14 +197,14 @@
                             <div class="hover-cursor slide-salon-imgs" data="salon">
                                 <div class="content__imgList">
                                     <div class="content__imgListInner" list="salon">
-                                        <div class="content__img imgWrap" order="1"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="2"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="3"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="4"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling3.jpg" alt="" class="img"></div></div>
-                                        <div class="content__img imgWrap" order="5"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="6"><div><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="7"><div><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
-                                        <div class="content__img imgWrap" order="8"><div><img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="1"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="2"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="3"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="4"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling3.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="5"><div class="imgAnime"><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="6"><div class="imgAnime"><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="7"><div class="imgAnime"><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="8"><div class="imgAnime"> <img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
                                     </div>
                                 </div>
 
@@ -234,6 +235,7 @@
                 
             </div>
         </div>
+        </div>
     </main>
   
     </div>
@@ -245,10 +247,18 @@
     <script src="js/showContent.js"></script>
     <script src="js/main.js"></script>
     <script>
+            
+
         
         $(function(){
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true
+            });
+            
             setTimeout(function(){
                 $(".mv__bg").addClass("mv__bg--visible")
+            
             }, 500)
 
             const animeContent = new AnimeContent();
@@ -265,7 +275,7 @@
 
 
         var beforeScroll = $(window).scrollTop();
-        $(window).scroll(function() {
+        $(window).on('wheel', function() {
                         
             // windowがスクロールされた時に実行する処理
             const $mv = $(".mv");
@@ -285,9 +295,9 @@
             var sa = nowScroll - beforeScroll;
             beforeScroll = nowScroll
 
-            var agent = navigator.userAgent;  
+            var agent = navigator.userAgent; 
             if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){  
-                $(".imgWrap > div").each(function(){
+                $(".imgAnime").each(function(){
                     var nowTop = $(window).scrollTop();
                     var nowBottom = nowTop + $(window).outerHeight();
                     var imgTop = $(this).offset().top
@@ -305,11 +315,46 @@
                         })
                     }
                 })
-            }
+                console.log(nowScroll)
+                $(".mv__bg").each(function(){
+                    var imgBottom = $(this).outerHeight();
+                    if (nowScroll < $(window).outerHeight()) {
+                        console.log("ok")
+                        var matrix = $(this).css("transform");
+                        const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
+                        var y = m ? m[5] : 0;
+                        $(this).css({
+                            "transform": `translateY(${ - (nowScroll) / 3}px)`
+                        })
+                    } else {
+                        
+                    }
+                })
 
+            } else {
+                $(".mv__bg").each(function(){
+                var scrollTop = $(".contents").offset().top
+                var imgBottom = $(this).outerHeight();
+                if (scrollTop > 0) {
+                    console.log("ok")
+                    var matrix = $(this).css("transform");
+                    const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
+                    var y = m ? m[5] : 0;
+                    $(this).css({
+                        "transform": `translateY(${ - (imgBottom - scrollTop) / 3}px)`
+                    })
+                } else {
+                    
+                }
+            })
+            
+
+            }
+            
 
 
         });
+        
         
     </script>
     <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>

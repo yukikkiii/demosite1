@@ -75,7 +75,6 @@ function carMouseOver(){
     $(document).on("mousemove", function(e) {
         mouseX = e.pageX;
         mouseY = e.pageY;
-        console.log("ok")
     });
     
     $(".hover-cursor").on({

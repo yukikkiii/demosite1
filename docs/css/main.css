@@ -109,7 +109,7 @@ span.js-scroll-visible {display: inline-block;}
 } */
 
 .contents {
-padding-top: 0px;
+padding-top: 70px;
 }
 
 * {margin: 0;padding: 0;-webkit-font-smoothing: antialiased;}
@@ -149,9 +149,9 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
 .header__logo {font-size: 2.0rem;z-index: 1000;}
 
 /* mv */
-.mv {position: relative; height: 100vh;margin-bottom: 100px;}
+.mv {position: relative; height: 100vh;margin-bottom: 100px;z-index:-10000;}
 .mv__bg::after, .mv__bg {content:"";top:0px;left:0px;bottom:0px;right:0px;transition: all 2;}
-.mv__bg {position: fixed;z-index: -1;transform: translateY(0)}
+.mv__bg {position: absolute;z-index: -1;transform: translateY(0)}
 .mv__bg::after {top:0px;left:0px;bottom:0px;right:0px;
     position: absolute;
 }
