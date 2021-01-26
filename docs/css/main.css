@@ -69,7 +69,7 @@ span.js-scroll-visible {display: inline-block;}
 .fadeInNormal55 {
     position: relative;
     animation-name: fadeIn;
-    animation-duration: 0.8s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-out;
     animation-delay: 0.3s;
     animation-iteration-count:1;
@@ -221,6 +221,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .mv__chachTxt {font-size: 0.9rem;}
     html{font-size: 13px;}
     .only-sp {display:block;}
+
     .header__inner {align-items: center;}
 
     .header__menu {width: 40px;height: 40px}
@@ -255,6 +256,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     #concept{height: auto;}
     .concept__txt {max-width: 100%;margin-bottom: 20px;}
     .concept__img {position: relative;text-align: right;margin-left: auto;}
+    .concept__img--visible {transition: all 2s 0.2s;opacity:1 !important;}
 
     .about__leftContent {width: 100%;}
     .about__img {height: 300px;width: 100%;}
