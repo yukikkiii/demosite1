@@ -57,6 +57,7 @@ span.js-scroll-visible {display: inline-block;}
 .fadeIn45,
 .fadeIn50,
 .fadeIn55,
+.fadeInNormal,
 .fadeInNormal15, 
 .fadeInNormal20, 
 .fadeInNormal25,
@@ -70,7 +71,7 @@ span.js-scroll-visible {display: inline-block;}
     animation-name: fadeIn;
     animation-duration: 0.8s;
     animation-timing-function: ease-out;
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
     animation-iteration-count:1;
     animation-direction:normal;
     animation-fill-mode:forwards;
@@ -84,6 +85,7 @@ span.js-scroll-visible {display: inline-block;}
 .fadeIn40{animation-delay: 4.0s;}
 .fadeIn45{animation-delay: 4.5s;}
 .fadeIn50{animation-delay: 5.0s;}
+.fadeInNormal {animation-name:fadeInNomal;}
 .fadeInNormal55{animation-delay: 5.5s;animation-name:fadeInNomal;}
 .fadeInNormal15{ animation-delay: 1.5s;animation-name:fadeInNomal;}
 .fadeInNormal20{ animation-delay: 2.0s;animation-name:fadeInNomal;}
@@ -213,9 +215,10 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .mv__bg--visible {background-size: auto 100%;}
 }
 @media screen and (max-width: 768px) {
-    #main {overflow: hidden;}
-    h1 {line-height: 1.3;margin-bottom: 20px;}
-    h1 span {display: block;font-size:3.0rem;}
+    .main {overflow: hidden;}
+    h1 {line-height: 1.3;margin-bottom: 20px;letter-spacing: 0.0rem;}
+    h1 span {display: block;font-size:2.6rem;}
+    .mv__chachTxt {font-size: 0.9rem;}
     html{font-size: 13px;}
     .only-sp {display:block;}
     .header__inner {align-items: center;}
@@ -247,7 +250,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .mv__bg {background-image: url(../img/mv_sp.jpg);}
     .mv__bg {background-size: 150% auto;position: absolute;}
     .mv__bg--visible {background-size: 100% auto;}
-    .mv__content { left: unset;right: 20%; width: 80vw;z-index: 10; text-align: right;}
+    .mv__content { left: unset;right: 10%; width: 80vw;z-index: 10; text-align: right;}
 
     #concept{height: auto;}
     .concept__txt {max-width: 100%;margin-bottom: 20px;}
