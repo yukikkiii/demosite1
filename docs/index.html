@@ -3,23 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="https://money-penguin.tokyo/wp-content/uploads/2021/01/cropped-アセット-1-8-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://money-penguin.tokyo/wp-content/uploads/2021/01/cropped-アセット-1-8-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://money-penguin.tokyo/wp-content/uploads/2021/01/cropped-アセット-1-8-180x180.png" />
-<meta name="msapplication-TileImage" content="https://money-penguin.tokyo/wp-content/uploads/2021/01/cropped-アセット-1-8-270x270.png" />
-<title>トレーナーデモサイト</title>
-<meta property="og:title" content="トレーナーデモサイト">
-<meta property="og:site_name" content="トレーナーデモサイト">
-<meta name=”robots” content=”noindex”>
-<link href="https://yukikkiii.github.io/demosite1/" rel="canonical">
 
-<meta name="description" itemprop="description" content="トレーナーデモサイト">
-<meta property="og:description" content="トレーナーデモサイト">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yukikkiii.github.io/demosite1/">
-<meta property="og:image" content="img/mv.jpg">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
 <script>
 (function(d) {
     var config = {
@@ -30,153 +14,16 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
 </script>
-<script
-src="https://code.jquery.com/jquery-3.5.1.min.js"
-integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-crossorigin="anonymous"></script>
-<style>
-* {margin: 0;padding: 0;}
-html {font-size: 14px;}
-body {font-family: dnp-shuei-mincho-pr6n, sans-serif;font-weight: 400;font-style: normal;color: #2C2C2C;}
-ul, ol {list-style: none;}
-a {display: block;text-decoration: none;color:#2C2C2C;transition: all 0.2s;}
-a:hover {transform: translateY(-5px);transition: all 0.2s;}
-h1 {font-size: 3.5rem;}
-h3 {font-size: 2.5rem;}
-section {position:relative; margin-bottom: 100px;}
-.only-sp {display: none;}
-.mC {margin-left: auto;margin-right: auto;}
-.maxW {max-width: 900px;}
-.p2 {font-size: 2.0rem;}
-.p15 {font-size: 1.5rem}
-.p14 {font-size: 1.4rem}
-.p13 {font-size: 1.3rem}
-.p12 {font-size: 1.2rem}
-.p11 {font-size: 1.1rem}
-.p09 {font-size: 0.9rem}
-.p08 {font-size: 0.8rem}
-.colorBlack {color: #2C2C2C !important;}
-.hamburger .colorBlack {background-color: #2C2C2C !important;}
-.colorBlack::before, .colorBlack::after {background-color: #2C2C2C !important;}
-.imgWrap {position: relative; background-color: rgba(0,0,0,0.2);overflow: hidden;}
-.imgWrap img {position:absolute;width: 100%; top:50%;left:50%;transform: translate(-50%, -50%)}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://rawcdn.githack.com/martinlaxenaire/curtainsjs/95957f855ad9fd51850e97312cd389af76e9704e/build/curtains.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="js/locomotive-scroll.min.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/scroll.css">
 
-
-/* header */
-header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
-.header__inner {display: flex;align-items: center;align-items:unset;}
-.header__inner, .header__inner a {color: #fff; font-weight: 600;}
-.header__menu {position: relative;margin-left: auto;text-align:right;}
-.header__logo {font-size: 2.0rem;z-index: 1000;}
-
-/* mv */
-.mv {position: relative; height: 100vh;margin-bottom: 100px;}
-.mv__bg::after, .mv__bg {content:"";position: absolute;top:-50px;left:-50px;bottom:-50px;right:-50px;transition: all 2;}
-.mv__bg::after {top:0px;left:0px;bottom:0px;right:0px;}
-.mv__bg {background: url(img/mv.jpg) no-repeat center center/cover;opacity:0}
-.mv__bg::after {background-color: rgba(0,0,0,0.2);}
-.mv__content {opacity:0;position: absolute; top: 50%;left:50%;transform: translateY(-50%);color: #fff;z-index: 1000}
-
-/* concept */
-#concept {height: calc(100vh - 100px);}
-.concept__ttl {margin-bottom: 30px;}
-.concept__txt {max-width: 60%;min-height: 300px;}
-.concept__inner {position: relative;}
-.concept__img {position: absolute;bottom: 0px; right:0px;width: 250px;height:250px;border-radius: 100%;}
-.content__imgListArrow {text-align: right;}
-.content__imgListArrow .arrow {position:relative;width: 20px;height: 20px;transform: rotate(-45deg)skew(  calc((90deg - 50deg) / 2),  calc((90deg - 50deg) / 2));;display: inline-block;background: #2C2C2C;}
-.arrow-left::before , .arrow-right::before{content:"";position: absolute; width: 18px;height: 18px;background-color: #fff;}
-.arrow-right::before {top:-1px;left:-1px}
-.arrow-left::before {right:-1px;bottom:-1px;}
-
-/*about */
-.about_heading {margin-bottom: 20px;}
-.about__content {display: flex;}
-.about__leftContent {width: 40%;}
-.about__img {width: 100%;height: 90%; border-radius: 10px;}
-.about__imgSlider {display: flex;justify-content: center;align-items: center;height: 10%}
-.about__imgSlider span {background-color: #00000033; width: 5px;height: 5px;border-radius: 50%;margin: 0 5px;}
-.about__rightContent {flex: 1; margin-left: 50px;}
-.about__rightContent ul {margin-bottom: 20px;}
-.about__subTtl {font-weight: 600;}
-
-/* content */
-.content {margin-bottom: 80px;}
-.content__imgList {padding: 0;overflow: hidden; }
-.content__imgListInner {position: relative;height: 400px;}
-.content__img {position: absolute; background: rgba(0,0,0,0.2); width: 500px; margin-right: 40px;height: 400px;}
-.content__img:nth-child(1) {left:-520px;top:0;}
-.content__img:nth-child(2) {left:0px;top:0;}
-.content__img:nth-child(3) {left:520px;top:0;}
-.content__img:nth-child(4) {left:1040px;top:0;}
-.content__img:nth-child(5) {left:1560px;top:0;}
-.content__img:nth-child(6) {left:2080px;top:0;}
-.content__img:nth-child(7) {left:2600px;top:0;}
-.content__img:nth-child(8) {left:3120px;top:0;}
-.contact__snsList {display: flex;}
-.contact__snsList li {width: 30px;margin-right: 10px;}
-.contact__mail {margin-bottom: 20px;}
-
-
-@media screen and (max-width: 940px) {
-    .mC {margin-left: 20px; margin-right: 20px;}
-}
-@media screen and (max-width: 768px) {
-    html{font-size: 13px;}
-    .only-sp {display:block;}
-    .header__inner {align-items: center;}
-
-    .header__menu {width: 40px;height: 40px}
-    .header__menu .checkbox-toggle {position: absolute;top: 0;left: 0;z-index: 2;cursor: pointer;width: 40px;height: 40px;opacity: 0;}
-    .header__menu .checkbox-toggle:checked + .hamburger > div {transform: rotate(135deg);}
-    .header__menu .checkbox-toggle:checked + .hamburger > div:before,
-    .header__menu .checkbox-toggle:checked + .hamburger > div:after {top: 0;transform: rotate(90deg);}
-    .header__menu .checkbox-toggle:checked + .hamburger > div:after {opacity: 0;}
-    .header__menu .checkbox-toggle:checked ~ .menu  {pointer-events: auto;visibility: visible;}
-    .header__menu .checkbox-toggle:checked ~ .menu > div {transform: scale(1);transition-duration: .75s;}
-    .header__menu .checkbox-toggle:checked ~ .menu > div > div {opacity: 1;transition: opacity .4s ease .4s;}
-    .header__menu .checkbox-toggle:checked:checked + .hamburger > div {background: #2C2C2C;}
-    .header__menu .checkbox-toggle:checked:hover + .hamburger > div {transform: rotate(225deg);}
-    .hamburger {position: absolute;top: 0;left: 0;z-index: 1;width: 40px;height: 40px;border-radius: 0 .12em .12em 0;cursor: pointer;transition: box-shadow .4s ease;backface-visibility: hidden;display: flex;align-items: center;justify-content: center;}
-    .hamburger > div {position: relative;flex: none;width: 100%;height: 2px;background: #FEFEFE;transition: transform .4s ease;display: flex;align-items: center;justify-content: center;}
-    .hamburger > div:before,
-    .hamburger > div:after {content: '';position: absolute;z-index: 1;top: calc(-40px / 4);left: 0;width: 100%;height: 2px;background: inherit;transition: transform .4s ease;}
-    .hamburger > div:after {top: calc(40px / 4);}
-    .menu {position: fixed;top: 0;left: 0;width: 100%;height: 100%;pointer-events: none;visibility: hidden;overflow: hidden;backface-visibility: hidden;outline: 1px solid transparent;display: flex;align-items: center;justify-content: center;}
-    .menu > div {width: 200vw;height: 200vw;background: #fff;border-radius: 50%;transition: all .4s ease;flex: none;transform: scale(0);backface-visibility: hidden;overflow: hidden;display: flex;align-items: center;justify-content: center;}
-    .menu > div > div {text-align: center;max-width: 90vw;max-height: 100vh;opacity: 0;transition: opacity .4s ease;overflow-y: auto;flex: none;display: flex;align-items: center;justify-content: center;}
-    .menu > div > div > ul {list-style: none;padding: 0 1em;margin: 0;display: block;max-height: 100vh;}
-    .menu > div > div > ul > li {margin-bottom: 20px;display: block;}
-    .menu > div > div > ul > li > a {position: relative;cursor: pointer;transition: color .4s ease;color:#2C2C2C;}
-
-.mv {overflow: hidden;}
-    .mv__bg {background: url(img/mv_sp.jpg) no-repeat center center / auto 100%;}
-    .mv__content { left: 30%;width: 80vw;z-index: 10}
-
-    #concept{height: auto;}
-    .concept__txt {max-width: 100%;margin-bottom: 20px;}
-    .concept__img {position: relative;text-align: right;margin-left: auto;}
-
-    .about__leftContent {width: 100%;}
-    .about__img {height: 300px;width: 100%;}
-    .about__imgSlider {padding: 20px;}
-    .about__rightContent {margin-left:0;}
-    .about__content {display: block;}
-
-    .content__img {width: 100vw;}
-    .content__img img {height: 100%; width: auto}
-    .content__img:nth-child(1) {left:-100vw;top:0;}
-    .content__img:nth-child(2) {left:0vw;top:0;}
-    .content__img:nth-child(3) {left:100vw;top:0;}
-    .content__img:nth-child(4) {left:200vw;top:0;}
-    .content__img:nth-child(5) {left:300vw;top:0;}
-    .content__img:nth-child(6) {left:400vw;top:0;}
-    .content__img:nth-child(7) {left:500vw;top:0;}
-    .content__img:nth-child(8) {left:600vw;top:0;}
-}
-</style>
 </head>
 <body>
+    <div data-scroll-container>
     <header class="header" id="header">
         <div class="header__inner">
             <div class="header__logo logo">
@@ -206,386 +53,240 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
             </div>
         </div>
     </header>
+
     <main class="main">
-        <div class="main__inner">
-            <div class="mv">
+        <div class="main__inner" data-scroll-section>
+            <div class="mv" data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
                 <div class="mv__bg"></div>
                 <div class="mv__content">
-                    <h1 class="h1">本当の自分、覚醒</h1>
-                    <p class="mv__chachTxt">まだ知らない自分に出会って<br>
-                        最高の自分になるために</p>
+                    <h1 class="h1 js-scroll-visible" delay="40">
+                        <span class=""></span>本</span>
+                        <span class=""></span>当</span>
+                        <span class="" ></span>の</span>
+                        <span class="" ></span>自</span>
+                        <span class="" ></span>分</span>
+                        <span class="" ></span>、</span>
+                        <span class="" ></span>覚</span>
+                        <span class="" ></span>醒</span>
+                    </h1>
+                    <p class="mv__chachTxt p14">
+                        <span class="js-scroll-visible" delay="50">まだ知らない自分に出会って</span><br>
+                        <span class="js-scroll-visible" delay="50">最高の自分になるために</span>
+                    </p>
                 </div>
             </div>
-            <section id="concept" class="section">
-                <div class="section__inner concept__inner maxW mC">
-                    <p class="concept__ttl p2">
-                        ダイエットは"辛くない"<br>
-                        自分と向き合って、本当の自分を見つける
-                    </p>
-                    <p class="concept__txt">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキスト
-                    </p>
-                    <div class="concept__img imgWrap">
-                        <img src="img/me.jpg" alt="" class="img">
-                    </div>
-                </div>
-            </section>
-            <section id="about" class="section">
-                <div class="section__inner about__inner maxW mC">
-                    <h2 class="h2">Who I Am</h2>
-                    <p class="about_heading p15">こんにちは、万年ダイエッターだったMyunです！</p>
-                    <div class="about__content">
-                        <div class="about__leftContent">
-                            <div class="about__img imgWrap">
-                                <img src="img/me-main.jpg" alt="" class="img">
-                            </div>
-                            <div class="about__imgSlider">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                        
-                        <div class="about__rightContent">
-                            <ul>
-                                <li>テキストテキストテキスト</li>
-                                <li>テキストテキストテキストテキストテキスト</li>
-                                <li>テキストテキスト</li>
-                            </ul>
-                            <p class="about__subTtl p12">経歴</p>
-                            <ul>
-                                <li>テキストテキストテキスト</li>
-                                <li>テキストテキストテキストテキストテキスト</li>
-                                <li>テキストテキストテキストテキスト</li>
-                            </ul>
-                            <p class="about__subTtl p12">資格</p>
-                            <ul>
-                                <li>テキストテキストテキストテキストテキスト</li>
-                                <li>テキストテキストテキスト</li>
-                            </ul>
-                            <ul>
-                                <li>テキストテキストテキストテキスト</li>
-                                <li>テキストテキストテキスト</li>
-                                <li>テキストテキストテキストテキストテキスト</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-            <section class="section" id="contents">
-                <div class="section__inner">
-                    <h2 class="h2 mC maxW">Who I Do</h2>
-                    <div class="content" id="counseling">
-                        <h3 class="h3 mC maxW">カウンセリング</h3>
-                        <p class="content__txt mC maxW">
-                            健康でいるためには精神を安定させることが大切<br>
-                            ダイエットを始める前にしっかり自分を知って、<br>
-                            自分に合った方法を見つけましょう！
+            <div class="contents">
+                <section id="concept" class="section">
+                    <div class="section__inner concept__inner maxW mC">
+                        <p class="concept__ttl p2 js-textSpan">
+                            <span class="js-scroll-visible">ダイエットは"辛くない"</span><br>
+                            <span class="js-scroll-visible">自分と向き合って、本当の自分を見つける</span>
                         </p>
-                        <div class="content__imgList">
-                            <div class="content__imgListArrow mC maxW">
-                                <span class="arrow-left arrow" content="counseling" dir="left"></span>
-                                <span class="arrow-right arrow" content="counseling" dir="right"></span>
-                            </div>
-                            <div class="content__imgList">
-                                <div class="content__imgListInner slide-imgs" list="counseling">
-                                    <div class="content__img imgWrap mostLeft-ImgWrap"><img src="img/counseling1.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap"><img src="img/counseling4.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap"><img src="img/counseling2.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap"><img src="img/counseling3.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap"><img src="img/counseling4.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap"><img src="img/counseling5.jpg" alt="" class="img"></div>
-                                    <div class="content__img imgWrap mostRight-ImgWrap"><img src="img/counseling6.jpg" alt="" class="img"></div>
+                        <p class="concept__txt js-scroll-visible" delay="Normal15">
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキスト
+                        </p>
+                        <div class="concept__img imgWrap js-scroll-visible" type="addClass" add="concept__img--visible">
+                            <div data-scroll data-scroll-speed="1" data-scroll-direction="vertical">
+                            <img style="width: 120%" src="img/me.jpg" alt="" class="img">
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="about" class="section">
+                    <div class="section__inner about__inner maxW mC">
+                        <h2 class="h2 js-scroll-visible">Who I Am</h2>
+                        <p class="about_heading p15 js-scroll-visible" delay="15">こんにちは、万年ダイエッターだったMyunです！</p>
+                        <div class="about__content">
+                            <div class="about__leftContent">
+                                <div class="about__img imgWrap">
+                                    <div data-scroll data-scroll-speed="-1" data-scroll-direction="vertical">
+                                    <img alt="" class="img" src="img/me-main.jpg">
+                                </div>
+                                </div>
+                                <div class="about__imgSlider">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </div>
-                    <div class="content" id="trainning">
-                        <h3 class="h3 mC maxW">パーソナルトレーニング</h3>
-        
-                        <p class="content__txt mC maxW">
-                            60分であなたの体をメンテナンスします<br>
-                            間違ったトレーニングをしているとダイエットはできません！<br>
                             
-                        </p>
-                        <div class="content__imgListArrow mC maxW">
-                            <span class="arrow-left arrow" content="trainning" dir="left"></span>
-                            <span class="arrow-right arrow" content="trainning" dir="right"></span>
-                        </div>
-                        <div class="content__imgList">
-                            <div class="content__imgListInner slide-imgs" list="trainning">
-                            <div class="content__img imgWrap mostLeft-ImgWrap"><img src="img/trainning1.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/trainning2.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/trainning3.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/trainning4.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/trainning1.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/trainning2.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap mostRight-ImgWrap"><img src="img/trainning3.jpg" alt="" class="img"></div>
+                            <div class="about__rightContent js-scroll-visible" delay="Normal20">
+                                <ul>
+                                    <li>テキストテキストテキスト</li>
+                                    <li>テキストテキストテキストテキストテキスト</li>
+                                    <li>テキストテキスト</li>
+                                </ul>
+                                <p class="about__subTtl p12">経歴</p>
+                                <ul>
+                                    <li>テキストテキストテキスト</li>
+                                    <li>テキストテキストテキストテキストテキスト</li>
+                                    <li>テキストテキストテキストテキスト</li>
+                                </ul>
+                                <p class="about__subTtl p12">資格</p>
+                                <ul>
+                                    <li>テキストテキストテキストテキストテキスト</li>
+                                    <li>テキストテキストテキスト</li>
+                                </ul>
+                                <ul>
+                                    <li>テキストテキストテキストテキスト</li>
+                                    <li>テキストテキストテキスト</li>
+                                    <li>テキストテキストテキストテキストテキスト</li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="content" id="salon">
-                        <h3 class="h3 mC maxW">オンラインサロン</h3>
                         
-                        <p class="content__txt mC maxW">
-                            ダイエット仲間を作りましょう<br>
-                            挫折しそうな時、仲間がいれば続けられる<br>
-                            一緒に楽しみながらダイエット！
-                        </p>
-                        <div class="content__imgListArrow mC maxW">
-                            <span class="arrow-left arrow" content="salon" dir="left"></span>
-                            <span class="arrow-right arrow" content="salon" dir="right"></span>
-                        </div>
-                        <div class="content__imgList">
-                            <div class="content__imgListInner slide-imgs" list="salon">
-                            <div class="content__img imgWrap mostLeft-ImgWrap"><img src="img/salon1.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/salon2.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/salon3.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/salon4.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/salon1.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap"><img src="img/salon2.jpg" alt="" class="img"></div>
-                            <div class="content__img imgWrap mostRight-ImgWrap"><img src="img/salon3.jpg" alt="" class="img"></div>
-                            </div>
-
-                        </div>
                     </div>
+                </section>
+                <section class="section" id="contents">
+                    <div class="section__inner">
+                        <h2 class="h2 mC maxW js-scroll-visible">Who I Do</h2>
+                        <div class="content" id="counseling">
+                            <h3 class="h3 mC maxW js-scroll-visible">カウンセリング</h3>
+                            <p class="content__txt mC maxW js-scroll-visible" delay="Normal15">
+                                健康でいるためには精神を安定させることが大切<br>
+                                ダイエットを始める前にしっかり自分を知って、<br>
+                                自分に合った方法を見つけましょう！
+                                健康でいるためには精神を安定させることが大切<br>
+                                ダイエットを始める前にしっかり自分を知って、<br>
+                                自分に合った方法を見つけましょう！
+                            </p>
+                            <div class="hover-cursor slide-counsel-imgs" data="counseling">
+                                <div class="content__imgList">
+                                    <div class="content__imgListInner" list="counseling">
+                                        <div class="content__img imgWrap" order="1"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="2"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="3"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="4"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="5"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="6"><div><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="7"><div><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="8"><div><img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
 
-                    
-                </div>
-            </section>
-            <section class="section" id="contact">
-                <div class="section__inner mC maxW">
-                    <h2 class="h2">Contact</h2>
-                    <p class="p2 contact__ttl">お問い合わせ</p>
-                    <p>下記のアドレスより気軽にご連絡ください</p>
-                    <p class="p2 contact__mail">〇〇〇〇@〇〇〇〇.com</p>
-                    <ul class="contact__snsList">
-                        <li class="sns-twitter"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a></li>
-                        <li class="sns-facebook"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
-                        <li class="sns-instagram"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a></li>
-                    </ul>
-                </div>
-            </section>
+                        <div class="content" id="salon">
+                            <h3 class="h3 mC maxW js-scroll-visible">オンラインサロン</h3>
+                            
+                            <p class="content__txt mC maxW js-scroll-visible" delay="Normal15">
+                                ダイエット仲間を作りましょう<br>
+                                挫折しそうな時、仲間がいれば続けられる<br>
+                                一緒に楽しみながらダイエット！ダイエット仲間を作りましょう<br>
+                                挫折しそうな時、仲間がいれば続けられる<br>
+                                一緒に楽しみながらダイエット！
+                                挫折しそうな時、仲間がいれば続けられる<br>
+                                一緒に楽しみながらダイエット！ダイエット仲間を作りましょう<br>
+                                挫折しそうな時、仲間がいれば続けられる<br>
+                                一緒に楽しみながらダイエット！
+                            </p>
+
+                            <div class="hover-cursor slide-salon-imgs" data="salon">
+                                <div class="content__imgList">
+                                    <div class="content__imgListInner" list="salon">
+                                        <div class="content__img imgWrap" order="1"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="2"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="3"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling2.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="4"><div data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling3.jpg" alt="" class="img"></div></div>
+                                        <div class="content__img imgWrap" order="5"><div><img src="img/counseling3.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="6"><div><img src="img/counseling4.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="7"><div><img src="img/counseling5.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                        <div class="content__img imgWrap" order="8"><div><img src="img/counseling6.jpg" alt="" class="img" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"></div></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </section>
+                <section class="section" id="contact">
+                    <div class="section__inner mC maxW">
+                        <h2 class="h2">Contact</h2>
+                        <p class="p2 contact__ttl">お問い合わせ</p>
+                        <p>下記のアドレスより気軽にご連絡ください</p>
+                        <p class="p2 contact__mail">〇〇〇〇@〇〇〇〇.com</p>
+                        <ul class="contact__snsList">
+                            <li class="sns-twitter"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a></li>
+                            <li class="sns-facebook"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
+                            <li class="sns-instagram"><a href=""><svg role="img" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a></li>
+                        </ul>
+                    </div>
+                </section>
+                <footer class="footer" style="background-color: #fff;">
+                    <div class="footer__inner"></div>
+                    <div style="height: 600px"></div>
+                </footer>
+                
+                
+            </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer__inner"></div>
-    </footer>
+  
+    </div>
+    
+    <div id="stalker"></div>
+    <div id="follower"></div>
+
+    <!-- <script src="js/curtain.js"></script> -->
+    <script src="js/showContent.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        var moveImgLi = false;
-        var windowW = $(window).width();
-        var pad = 20;
-        $(window).on('load', function() {
-            setTimeout(function(){
-                $(".mv__bg").animate({
-                    "top": 0,
-                    "left": 0,
-                    "bottom":0,
-                    "right": 0,
-                    "opacity": 1
-                }, 3000, 'swing')
-                $(".mv__content").animate({
-                   "opacity": 1 
-                }, 2400, 'swing')
-            }, 500)
-            
-
-            function checChangeColor($ele, mvBottom){
-                const eleH = $ele.outerHeight() + $ele.offset().top;
-                if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
-                    $ele.addClass("colorBlack");
-                } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
-                    $ele.removeClass("colorBlack");
-                }
-            }
-
-            $(window).on("resize", function(){
-                var nowWindowW = $(window).width();
-                // to pc
-                if (windowW < 768 && nowWindowW >= 768) {
-                    var $lists = $(".slide-imgs");
-                    $lists.each(function(){
-                        var $imgs = $(this).find(".imgWrap");
-                        var imgW = $imgs.outerWidth();
-                        var moveLeft = -imgW - pad;
-                        $imgs.each(function(){
-                            var $img = $(this);
-                            $img.css("left", moveLeft);
-                            moveLeft += imgW + 20;
-                        })
-                    })
-
-                }
-                // to sp
-                if (windowW >= 768 && nowWindowW < 768) {
-                    var $lists = $(".slide-imgs");
-                    $lists.each(function(){
-                        var moveLeft = -100;
-                        $(this).find(".imgWrap").each(function(){
-                            var $img = $(this);
-                            $img.css("left", moveLeft + "%");
-                            console.log(moveLeft)
-                            moveLeft += 100;
-                        })
-                    })
-                }
-                windowW = nowWindowW;
-            })
-            $(window).scroll(function() {
-                
-                // windowがスクロールされた時に実行する処理
-                const $mv = $(".mv");
-                const mvBottom = $mv.outerHeight() + $mv.offset().top;
-                const menu = $(".menu li a").each(function(){
-                    const $li = $(this);
-                    checChangeColor($li, mvBottom);
-                });
-
-                const $logo = $("#js-logo");
-                checChangeColor($logo, mvBottom);
-
-                const $spMenu = $("#js-hamburger");
-                checChangeColor($spMenu, mvBottom);
-                
-            });
-        
-            
-            $(".arrow").on("click", function(){
-                if (!moveImgLi){
-                    moveImgLi = true
-                    const content = $(this).attr("content");
-                    const dir = $(this).attr("dir");
-                    var $list = $(`div[list=${content}]`);
-                    var $imgLi = $list.find(".imgWrap");
-
-                    if(windowW > 768){
-                        var imgW = $imgLi.eq(0).outerWidth();
-                        var moveL = imgW + pad
-                        var beforeX = 0;
-                        var nextReady = false;
-                        $imgLi.each(function(){
-                            const left = $(this).offset().left;
-                            
-                            var movePosi = dir === "left" ? left - moveL:left + moveL
-                            $(this).animate({
-                                "left": `${movePosi}px`
-                            }, 500, function(){
-                                if($(this).hasClass("mostLeft-ImgWrap") && dir === "left" && !nextReady){
-                                    var $mostRightImg = $list.find(".mostRight-ImgWrap");
-                                    var backTo = $mostRightImg.offset().left + moveL;
-                                    $(this).css("left", backTo + "px")
-
-                                    $mostRightImg.removeClass("mostRight-ImgWrap");
-                                    $(this).removeClass("mostLeft-ImgWrap");
-                                    $(this).addClass("mostRight-ImgWrap");
-
-                                    var nowMostLeftImg = $(this).next();
-                                    if(nowMostLeftImg.length > 0) {
-                                        
-                                        nowMostLeftImg.addClass("mostLeft-ImgWrap");
-                                    } else {
-                                        $imgLi.eq(0).addClass("mostLeft-ImgWrap");
-                                    }
-                                    nextReady = true
-                                }
-                                if($(this).hasClass("mostRight-ImgWrap") && dir === "right" && !nextReady){
-                                    var $mostRightImg = $list.find(".mostLeft-ImgWrap");
-                                    var backTo = $mostRightImg.offset().left - moveL;
-                                    $(this).css("left", backTo + "px")
-                                    $mostRightImg.removeClass("mostLeft-ImgWrap");
-                                    $(this).removeClass("mostRight-ImgWrap");
-                                    $(this).addClass("mostLeft-ImgWrap");
-
-                                    var nowMostLeftImg = $(this).prev();
-                                    console.log("a is:",nowMostLeftImg)
-                                    if(nowMostLeftImg.length > 0) {
-                                        
-                                        nowMostLeftImg.addClass("mostRight-ImgWrap");
-                                    } else {
-                                        console.log("yes")
-                                        $imgLi.eq($imgLi.length - 1).addClass("mostRight-ImgWrap");
-                                    }
-                                    nextReady = true
-                                }
-                                
-                                moveImgLi = false
-                            });
-                        });
-                    } else {
-                        var imgW = $imgLi.eq(0).outerWidth();
-                        var moveL = $(window).width();
-                        var beforeX = 0;
-                        var nextReady = false;
-                        $imgLi.each(function(){
-                            const left = $(this).offset().left;
-                            
-                            var movePosi = dir === "left" ? left - moveL:left + moveL
-                            $(this).animate({
-                                "left": `${movePosi}px`
-                            }, 500, function(){
-                                if($(this).hasClass("mostLeft-ImgWrap") && dir === "left" && !nextReady){
-                                    
-                                    var $mostRightImg = $list.find(".mostRight-ImgWrap");
-                                    var backTo = $mostRightImg.offset().left + moveL;
-                                    $(this).css("left", backTo + "px")
-
-                                    $mostRightImg.removeClass("mostRight-ImgWrap");
-                                    $(this).removeClass("mostLeft-ImgWrap");
-                                    $(this).addClass("mostRight-ImgWrap");
-
-                                    var nowMostLeftImg = $(this).next();
-                                    if(nowMostLeftImg.length > 0) {
-                                        
-                                        nowMostLeftImg.addClass("mostLeft-ImgWrap");
-                                    } else {
-                                        $imgLi.eq(0).addClass("mostLeft-ImgWrap");
-                                    }
-                                    nextReady = true
-                                }
-                                if($(this).hasClass("mostRight-ImgWrap") && dir === "right" && !nextReady){
-                                    var $mostRightImg = $list.find(".mostLeft-ImgWrap");
-                                    var backTo = $mostRightImg.offset().left - moveL;
-                                    $(this).css("left", backTo + "px")
-                                    $mostRightImg.removeClass("mostLeft-ImgWrap");
-                                    $(this).removeClass("mostRight-ImgWrap");
-                                    $(this).addClass("mostLeft-ImgWrap");
-
-                                    var nowMostLeftImg = $(this).prev();
-                                    if(nowMostLeftImg.length > 0) {
-                                        
-                                        nowMostLeftImg.addClass("mostRight-ImgWrap");
-                                    } else {
-                                        $imgLi.eq($imgLi.length - 1).addClass("mostRight-ImgWrap");
-                                    }
-                                    nextReady = true
-                                }
-                                
-                                moveImgLi = false
-                            });
-                        });
-                    }
-                    
-                    
-                }
-                
-            })
-        
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
         });
+        $(function(){
+
+            setTimeout(function(){
+                $(".mv__bg").addClass("mv__bg--visible")
+            }, 500)
+
+            const animeContent = new AnimeContent();
+            // animeContent.addClass($(".h1 .js-text"));
+        })
+        function checChangeColor($ele, mvBottom){
+    const eleH = $ele.outerHeight() + $ele.offset().top;
+    if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
+        $ele.addClass("colorBlack");
+    } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
+        $ele.removeClass("colorBlack");
+    }
+}
+
+var beforeScroll = $(window).scrollTop();
+$(window).scroll(function() {
+                
+    // windowがスクロールされた時に実行する処理
+    const $mv = $(".mv");
+    const mvBottom = $mv.outerHeight() + $mv.offset().top;
+    console.log(mvBottom)
+    const menu = $(".menu li a").each(function(){
+        const $li = $(this);
+        checChangeColor($li, mvBottom);
+    });
+
+    const $logo = $("#js-logo");
+    checChangeColor($logo, mvBottom);
+
+    const $spMenu = $("#js-hamburger");
+    checChangeColor($spMenu, mvBottom);
+});
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,205 @@
+<script>
+    function a() {
+        console.log("haha")
+    }
+    requestAnimationFrame(a);
+    var moveImgLi = false;
+    var windowW = $(window).width();
+    var pad = 20;
+    $(window).on('load', function() {
+        // setTimeout(function(){
+        //     $(".mv__bg").animate({
+        //         "top": 0,
+        //         "left": 0,
+        //         "bottom":0,
+        //         "right": 0,
+        //         "opacity": 1
+        //     }, 3000, 'swing')
+        //     $(".mv__content").animate({
+        //        "opacity": 1 
+        //     }, 2400, 'swing')
+        // }, 500)
+        
+
+        function checChangeColor($ele, mvBottom){
+            const eleH = $ele.outerHeight() + $ele.offset().top;
+            if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
+                $ele.addClass("colorBlack");
+            } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
+                $ele.removeClass("colorBlack");
+            }
+        }
+
+        $(window).on("resize", function(){
+            var nowWindowW = $(window).width();
+            // to pc
+            if (windowW < 768 && nowWindowW >= 768) {
+                var $lists = $(".slide-imgs");
+                $lists.each(function(){
+                    var $imgs = $(this).find(".imgWrap");
+                    var imgW = $imgs.outerWidth();
+                    var moveLeft = -imgW - pad;
+                    $imgs.each(function(){
+                        var $img = $(this);
+                        $img.css("left", moveLeft);
+                        moveLeft += imgW + 20;
+                    })
+                })
+
+            }
+            // to sp
+            if (windowW >= 768 && nowWindowW < 768) {
+                var $lists = $(".slide-imgs");
+                $lists.each(function(){
+                    var moveLeft = -100;
+                    $(this).find(".imgWrap").each(function(){
+                        var $img = $(this);
+                        $img.css("left", moveLeft + "%");
+                        console.log(moveLeft)
+                        moveLeft += 100;
+                    })
+                })
+            }
+            windowW = nowWindowW;
+        })
+        $(window).scroll(function() {
+            
+            // windowがスクロールされた時に実行する処理
+            const $mv = $(".mv");
+            const mvBottom = $mv.outerHeight() + $mv.offset().top;
+            const menu = $(".menu li a").each(function(){
+                const $li = $(this);
+                checChangeColor($li, mvBottom);
+            });
+
+            const $logo = $("#js-logo");
+            checChangeColor($logo, mvBottom);
+
+            const $spMenu = $("#js-hamburger");
+            checChangeColor($spMenu, mvBottom);
+            
+        });
+    
+        
+        $(".arrow").on("click", function(){
+            if (!moveImgLi){
+                moveImgLi = true
+                const content = $(this).attr("content");
+                const dir = $(this).attr("dir");
+                var $list = $(`div[list=${content}]`);
+                var $imgLi = $list.find(".imgWrap");
+
+                if(windowW > 768){
+                    var imgW = $imgLi.eq(0).outerWidth();
+                    var moveL = imgW + pad
+                    var beforeX = 0;
+                    var nextReady = false;
+                    $imgLi.each(function(){
+                        const left = $(this).offset().left;
+                        
+                        var movePosi = dir === "left" ? left - moveL:left + moveL
+                        $(this).animate({
+                            "left": `${movePosi}px`
+                        }, 500, function(){
+                            if($(this).hasClass("mostLeft-ImgWrap") && dir === "left" && !nextReady){
+                                var $mostRightImg = $list.find(".mostRight-ImgWrap");
+                                var backTo = $mostRightImg.offset().left + moveL;
+                                $(this).css("left", backTo + "px")
+
+                                $mostRightImg.removeClass("mostRight-ImgWrap");
+                                $(this).removeClass("mostLeft-ImgWrap");
+                                $(this).addClass("mostRight-ImgWrap");
+
+                                var nowMostLeftImg = $(this).next();
+                                if(nowMostLeftImg.length > 0) {
+                                    
+                                    nowMostLeftImg.addClass("mostLeft-ImgWrap");
+                                } else {
+                                    $imgLi.eq(0).addClass("mostLeft-ImgWrap");
+                                }
+                                nextReady = true
+                            }
+                            if($(this).hasClass("mostRight-ImgWrap") && dir === "right" && !nextReady){
+                                var $mostRightImg = $list.find(".mostLeft-ImgWrap");
+                                var backTo = $mostRightImg.offset().left - moveL;
+                                $(this).css("left", backTo + "px")
+                                $mostRightImg.removeClass("mostLeft-ImgWrap");
+                                $(this).removeClass("mostRight-ImgWrap");
+                                $(this).addClass("mostLeft-ImgWrap");
+
+                                var nowMostLeftImg = $(this).prev();
+                                console.log("a is:",nowMostLeftImg)
+                                if(nowMostLeftImg.length > 0) {
+                                    
+                                    nowMostLeftImg.addClass("mostRight-ImgWrap");
+                                } else {
+                                    console.log("yes")
+                                    $imgLi.eq($imgLi.length - 1).addClass("mostRight-ImgWrap");
+                                }
+                                nextReady = true
+                            }
+                            
+                            moveImgLi = false
+                        });
+                    });
+                } else {
+                    var imgW = $imgLi.eq(0).outerWidth();
+                    var moveL = $(window).width();
+                    var beforeX = 0;
+                    var nextReady = false;
+                    $imgLi.each(function(){
+                        const left = $(this).offset().left;
+                        
+                        var movePosi = dir === "left" ? left - moveL:left + moveL
+                        $(this).animate({
+                            "left": `${movePosi}px`
+                        }, 500, function(){
+                            if($(this).hasClass("mostLeft-ImgWrap") && dir === "left" && !nextReady){
+                                
+                                var $mostRightImg = $list.find(".mostRight-ImgWrap");
+                                var backTo = $mostRightImg.offset().left + moveL;
+                                $(this).css("left", backTo + "px")
+
+                                $mostRightImg.removeClass("mostRight-ImgWrap");
+                                $(this).removeClass("mostLeft-ImgWrap");
+                                $(this).addClass("mostRight-ImgWrap");
+
+                                var nowMostLeftImg = $(this).next();
+                                if(nowMostLeftImg.length > 0) {
+                                    
+                                    nowMostLeftImg.addClass("mostLeft-ImgWrap");
+                                } else {
+                                    $imgLi.eq(0).addClass("mostLeft-ImgWrap");
+                                }
+                                nextReady = true
+                            }
+                            if($(this).hasClass("mostRight-ImgWrap") && dir === "right" && !nextReady){
+                                var $mostRightImg = $list.find(".mostLeft-ImgWrap");
+                                var backTo = $mostRightImg.offset().left - moveL;
+                                $(this).css("left", backTo + "px")
+                                $mostRightImg.removeClass("mostLeft-ImgWrap");
+                                $(this).removeClass("mostRight-ImgWrap");
+                                $(this).addClass("mostLeft-ImgWrap");
+
+                                var nowMostLeftImg = $(this).prev();
+                                if(nowMostLeftImg.length > 0) {
+                                    
+                                    nowMostLeftImg.addClass("mostRight-ImgWrap");
+                                } else {
+                                    $imgLi.eq($imgLi.length - 1).addClass("mostRight-ImgWrap");
+                                }
+                                nextReady = true
+                            }
+                            
+                            moveImgLi = false
+                        });
+                    });
+                }
+                
+                
+            }
+            
+        })
+    
+    })
+</script>

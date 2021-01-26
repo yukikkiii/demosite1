@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+:root {
+  --family: "Raleway", sans-serif;
+
+  --black1: rgb(0, 0, 0);
+  --white1: rgb(255, 255, 255);
+
+  --scale: 1;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  padding:0;
+}
+
+html {
+  /*font-size: var(--font-size);*/
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--family);
+}
+
+
+
+#wrap-texture {
+  position: fixed;
+  transform: translateY(0);
+  opacity: 0;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -30px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#canvas {
+  /* make the canvas wrapper fits the document */
+  position: absolute;
+  width: 100%;
+  transform: translateY(0);
+  height: 200vh;
+
+}
+
+.plane {
+  /* define the size of your plane */
+  width: 100%;
+  min-height: 100%;
+  z-index: 100;
+}
+
+.plane img {
+  
+  /* hide the img element */
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --scale: 1.1;
+  }
+}
+
+
