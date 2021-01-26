@@ -76,6 +76,8 @@ function carMouseOver(){
         mouseX = e.pageX;
         mouseY = e.pageY;
     });
+
+    var scrollNow = false;
     
     $(".hover-cursor").on({
       "mouseenter": function() {
@@ -87,26 +89,31 @@ function carMouseOver(){
         windowW / 2 > mouseX ? cursor.removeClass("right").addClass("left") : cursor.removeClass("left").addClass("right");
       },
       "click": function(){
+        if (scrollNow) return;
+        scrollNow = true
         var dir = cursor.hasClass("right") ? "right": "left";
         console.log(dir)
         var imgsList = $(this).find(".content__img");
-        clearTimeout(caucelSetLoop);
+        var imgCnt = imgsList.length;
         
-        imgsList.each(function(){
-          var order = Number($(this).attr("order"));
-          $(this).addClass("transition-clear");
-          
-          // if (dir === "right") {
-          //   if (order === 0) $(this).attr("order", imgsList.length - 1)
-          //   else $(this).attr("order", order - 1)
-          // }
-          // else {
-          //   if (order === 0) $(this).attr("order", imgsList.length - 1)
-          //   else $(this).attr("order", order - 1)
-          // }
-        })
-        // $(this).removeClass("transition-clear");
-        caucelLoop()
+        if (dir === "right") {
+          imgsList.each(function(){
+            var order = Number($(this).attr("order"));
+            if (order < imgCnt) $(this).attr("order", order + 1)
+            else $(this).attr("order", 1)
+            console.log("new order is", $(this).attr("order"))
+          })
+        } else {
+          imgsList.each(function(){
+            var order = Number($(this).attr("order"));
+            if (order !== 1) $(this).attr("order", order - 1)
+            else $(this).attr("order", imgCnt)
+          })
+        }
+        console.log("----------------")
+        setTimeout(function(){
+          scrollNow = false
+        }, 500)
         
       },
       "mouseleave": function() {
