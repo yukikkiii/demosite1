@@ -255,64 +255,61 @@
             // animeContent.addClass($(".h1 .js-text"));
         })
         function checChangeColor($ele, mvBottom){
-    const eleH = $ele.outerHeight() + $ele.offset().top;
-    if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
-        $ele.addClass("colorBlack");
-    } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
-        $ele.removeClass("colorBlack");
-    }
-}
+            const eleH = $ele.outerHeight() + $ele.offset().top;
+            if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
+                $ele.addClass("colorBlack");
+            } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
+                $ele.removeClass("colorBlack");
+            }
+        }
 
 
-var beforeScroll = $(window).scrollTop();
-$(window).scroll(function() {
-                
-    // windowがスクロールされた時に実行する処理
-    const $mv = $(".mv");
-    const mvBottom = $mv.outerHeight() + $mv.offset().top;
-    const menu = $(".menu li a").each(function(){
-        const $li = $(this);
-        checChangeColor($li, mvBottom);
-    });
+        var beforeScroll = $(window).scrollTop();
+        $(window).scroll(function() {
+                        
+            // windowがスクロールされた時に実行する処理
+            const $mv = $(".mv");
+            const mvBottom = $mv.outerHeight() + $mv.offset().top;
+            const menu = $(".menu li a").each(function(){
+                const $li = $(this);
+                checChangeColor($li, mvBottom);
+            });
 
-    const $logo = $("#js-logo");
-    checChangeColor($logo, mvBottom);
+            const $logo = $("#js-logo");
+            checChangeColor($logo, mvBottom);
 
-    const $spMenu = $("#js-hamburger");
-    checChangeColor($spMenu, mvBottom);
+            const $spMenu = $("#js-hamburger");
+            checChangeColor($spMenu, mvBottom);
 
-    var nowScroll = $(window).scrollTop();
-    var sa = nowScroll - beforeScroll;
-    beforeScroll = nowScroll
+            var nowScroll = $(window).scrollTop();
+            var sa = nowScroll - beforeScroll;
+            beforeScroll = nowScroll
 
-    var agent = navigator.userAgent;  
-    if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){  
-        $(".imgWrap > div").each(function(){
-            var nowTop = $(window).scrollTop();
-            var nowBottom = nowTop + $(window).outerHeight();
-            var imgTop = $(this).offset().top
-            var imgBottom = imgTop + $(this).outerHeight();
-            if( (imgTop > nowTop && nowBottom > imgTop) || (imgBottom > nowTop && nowBottom > imgBottom)) {
-                var matrix = $(this).css("transform");
-                const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
-                console.log(matrix)
-                console.log(m)
-                var y = m ? m[5] : 0;
-                console.log(y)
-                $(this).css({
-                    "transform": `translateY(${y - sa /10}px)`
-                })
-            } else {
-                $(this).css({
-                    "transform": `translateY(0px)`
+            var agent = navigator.userAgent;  
+            if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){  
+                $(".imgWrap > div").each(function(){
+                    var nowTop = $(window).scrollTop();
+                    var nowBottom = nowTop + $(window).outerHeight();
+                    var imgTop = $(this).offset().top
+                    var imgBottom = imgTop + $(this).outerHeight();
+                    if( (imgTop > nowTop && nowBottom > imgTop) || (imgBottom > nowTop && nowBottom > imgBottom)) {
+                        var matrix = $(this).css("transform");
+                        const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
+                        var y = m ? m[5] : 0;
+                        $(this).css({
+                            "transform": `translateY(${y - sa /10}px)`
+                        })
+                    } else {
+                        $(this).css({
+                            "transform": `translateY(0px)`
+                        })
+                    }
                 })
             }
-        })
-    }
 
 
 
-});
+        });
         
     </script>
     <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
