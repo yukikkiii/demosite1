@@ -276,6 +276,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .content__img:nth-child(6) {left:400vw;top:0;}
     .content__img:nth-child(7) {left:500vw;top:0;}
     .content__img:nth-child(8) {left:600vw;top:0;}
+    footer > div{height: 20px!important;}
 }
 
 @media screen and (max-width: 480px) {
