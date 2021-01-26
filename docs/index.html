@@ -258,45 +258,32 @@
             
             setTimeout(function(){
                 $(".mv__bg").addClass("mv__bg--visible")
-            
             }, 500)
 
             const animeContent = new AnimeContent();
             // animeContent.addClass($(".h1 .js-text"));
         })
-        function checChangeColor($ele, mvBottom){
-            const eleH = $ele.outerHeight() + $ele.offset().top;
-            if ( eleH > mvBottom && !$ele.hasClass("colorBlack") ) {
-                $ele.addClass("colorBlack");
-            } else if ( eleH < mvBottom && $ele.hasClass("colorBlack") )   {
-                $ele.removeClass("colorBlack");
-            }
-        }
 
 
-        var beforeScroll = $(window).scrollTop();
-        $(window).on('wheel', function() {
-                        
-            // windowがスクロールされた時に実行する処理
-            const $mv = $(".mv");
-            const mvBottom = $mv.outerHeight() + $mv.offset().top;
-            const menu = $(".menu li a").each(function(){
-                const $li = $(this);
-                checChangeColor($li, mvBottom);
-            });
+        var agent = navigator.userAgent; 
+        if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){ 
+            var beforeScroll = $(window).scrollTop();
+            $(window).on("scroll", function(){
+                const $mv = $(".mv");
+                const windwH = $(window).outerHeight();
+                const scrollTop = $(window).scrollTop();
+                const $hamburger = $(".hamburger");
+                const hamburgerBottom = $hamburger.outerHeight();
+                hamburgerBottom > windwH - scrollTop ? $("#js-hamburger").addClass("colorBlack") :$("#js-hamburger").removeClass("colorBlack");
 
-            const $logo = $("#js-logo");
-            checChangeColor($logo, mvBottom);
+                const $logo = $("#js-logo");
+                const logoBottom = $logo.outerHeight();
+                logoBottom > windwH - scrollTop ? $logo.addClass("colorBlack") :$logo.removeClass("colorBlack");
 
-            const $spMenu = $("#js-hamburger");
-            checChangeColor($spMenu, mvBottom);
+                var nowScroll = $(window).scrollTop();
+                var sa = nowScroll - beforeScroll;
+                beforeScroll = nowScroll
 
-            var nowScroll = $(window).scrollTop();
-            var sa = nowScroll - beforeScroll;
-            beforeScroll = nowScroll
-
-            var agent = navigator.userAgent; 
-            if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){  
                 $(".imgAnime").each(function(){
                     var nowTop = $(window).scrollTop();
                     var nowBottom = nowTop + $(window).outerHeight();
@@ -315,11 +302,10 @@
                         })
                     }
                 })
-                console.log(nowScroll)
+
                 $(".mv__bg").each(function(){
                     var imgBottom = $(this).outerHeight();
                     if (nowScroll < $(window).outerHeight()) {
-                        console.log("ok")
                         var matrix = $(this).css("transform");
                         const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
                         var y = m ? m[5] : 0;
@@ -330,32 +316,27 @@
                         
                     }
                 })
-
-            } else {
-                $(".mv__bg").each(function(){
-                var scrollTop = $(".contents").offset().top
-                var imgBottom = $(this).outerHeight();
-                if (scrollTop > 0) {
-                    console.log("ok")
-                    var matrix = $(this).css("transform");
-                    const m = matrix.replace(/matrix|\)|\(/g, "").split(",");
-                    var y = m ? m[5] : 0;
-                    $(this).css({
-                        "transform": `translateY(${ - (imgBottom - scrollTop) / 3}px)`
-                    })
-                } else {
-                    
-                }
             })
-            
+        } else {
+            $(window).on('wheel', function() {
+                const $mv = $(".mv");
+                const scrollTop = $(".contents").offset().top;
+                const menu = $(".menu li a").each(function(){
+                    const $li = $(this);
+                    const liBottom = $li.offset().top + $li.outerHeight();
+                    liBottom > scrollTop ? $li.addClass("colorBlack") : $li.removeClass("colorBlack");
+                });
 
-            }
-            
+                const $logo = $("#js-logo");
+                const logoBottom = $logo.offset().top + $logo.outerHeight();
+                logoBottom > scrollTop ? $logo.addClass("colorBlack") :$logo.removeClass("colorBlack");
 
-
-        });
-        
-        
+                $(".mv__bg").each(function(){
+                    var imgBottom = $(this).outerHeight();
+                    scrollTop > 0 ? $(this).css("transform", `translateY(${ - (imgBottom - scrollTop) / 3}px)`) : "";
+                })
+            })
+        }
     </script>
     <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
         <script nomodule src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
