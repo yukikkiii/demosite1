@@ -130,7 +130,7 @@ section {position:relative; margin-bottom: 100px;}
 .colorBlack::before, .colorBlack::after {background-color: rgba(0,0,0,0.5) !important;}
 .imgWrap {position: relative; overflow: hidden;border-radius: 10px;}
 .imgWrap > div {position: relative;height: 140%;}
-.imgWrap img {position: absolute; top:50%;left:50%; transform: translate(-50%, -50%); width: 100%;border-radius: 10px;}
+.imgWrap img {position: absolute; top:50%;left:50%; transform: translate(-50%, -50%); width: auto !important; height: 120%;border-radius: 10px;}
 
 
 /* header */
@@ -224,6 +224,9 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     html{font-size: 13px;}
     .only-sp {display:block;}
     .btn {padding: 5px 40px;}
+    .section {margin-bottom: 100px !important;}
+    .imgWrap, .img, .imgWrap > div {border-radius: 0 !important;}
+    #follower {width: 20px; height: 20px;}
 
     .header__inner {align-items: center;}
 
@@ -250,7 +253,7 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .menu > div > div > ul > li {margin-bottom: 40px;display: block;}
     .menu > div > div > ul > li > a {position: relative;cursor: pointer;transition: color .4s ease;color:#2C2C2C;}
 
-.mv {overflow: hidden;}
+    .mv {overflow: hidden;}
     .mv__bg {background-image: url(../img/mv_sp.jpg);}
     .mv__bg {background-size: 150% auto;position: absolute;}
     .mv__bg--visible {background-size: 100% auto;}
@@ -268,21 +271,22 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
     .about__content {display: block;}
 
     .slide-counsel-imgs, .slide-salon-imgs {width: 100% !important; transform: translateX(0) !important;}
-.content__imgListInner {height: 70vw;}
-.contents__flex {display: block;}
-.contents__flexLeft {margin-bottom: 30px;}
-.contents__flexRight {margin:20px;text-align: right;}
-    .content__img {width: 100vw;transform: translateX(0) !important;height: 70vw;margin-right:0;transition: transform 0.5s 0.1s}
-.content__img[order="1"] {transform:translateX(-200vw);opacity: 0;}
-.content__img[order="2"] {transform:translateX(-100vw);}
-.content__img[order="3"] {transform:translateX(0);}
-.content__img[order="4"] {transform:translateX(100vw);}
-.content__img[order="5"] {transform:translateX(200vw);opacity: 0 !important;}
-.content__img[order="6"] {transform:translateX(300vw);opacity: 0 !important;}
-.content__img[order="7"] {transform:translateX(300vw);opacity: 0 !important;}
-.content__img[order="8"] {transform:translateX(300vw);opacity: 0 !important;}
-.content__img[order="9"] {transform:translateX(300vw);opacity: 0 !important;}
-.content__img[order="10"] {transform:translateX(300vw);opacity: 0 !important;}
+    .content__imgListInner {height: 70vw;}
+    .contents__flex {display: block;}
+    .contents__flexLeft {margin-bottom: 30px;}
+    .contents__flexRight {margin:20px;text-align: right;}
+    .sp-click {margin-left: 20px;}
+    .content__img {width: 100vw;transform: translateX(0) !important;height: 70vw;margin-right:0;    transition: all 0.5s !important;}
+    .content__img[order="1"] {transform:translateX(-200vw);opacity: 0;}
+    .content__img[order="2"] {transform:translateX(-100vw);}
+    .content__img[order="3"] {transform:translateX(0);}
+    .content__img[order="4"] {transform:translateX(100vw);}
+    .content__img[order="5"] {transform:translateX(200vw);opacity: 0 !important;}
+    .content__img[order="6"] {transform:translateX(300vw);opacity: 0 !important;}
+    .content__img[order="7"] {transform:translateX(300vw);opacity: 0 !important;}
+    .content__img[order="8"] {transform:translateX(300vw);opacity: 0 !important;}
+    .content__img[order="9"] {transform:translateX(300vw);opacity: 0 !important;}
+    .content__img[order="10"] {transform:translateX(300vw);opacity: 0 !important;}
     footer > div{height: 20px!important;}
 }
 
@@ -300,28 +304,6 @@ header {position: fixed;top:0;left:0; right:0;z-index: 100;padding: 20px;}
 
 .hover-cursor {cursor: none !important; padding: 50px 0;}
 .transition-clear {transition: all 0.3s !important;}
- /* #stalker {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1001;
-  cursor: none !important;
-  pointer-events: none;
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 100%;
-}
-#stalker::before {
-    content: ">";
-    position: absolute;
-    top: 50%;
-    font-weight: 900;
-    left: 50%;
-    font-size: 3rem;
-    color: #fff;
-    transform: translate(-50%, -50%);
-} */
 
 #stalker,
 #follower {

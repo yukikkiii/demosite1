@@ -38,12 +38,12 @@
                   <div>
                     <div>
                       <ul>
-                    <li><a href="#top"><span class="menu-en">Top</span><span class="menu-ja">/ トップ</span></a></li>
-                    <li><a href="#concept"><span class="menu-en">Concept</span><span class="menu-ja">/ 私の思い</span></a></li>
-                    <li><a href="#about"><span class="menu-en">About</span><span class="menu-ja">/ 私について</span></a></li>
-                    <li><a href="#counseling"><span class="menu-en">Counseling</span><span class="menu-ja">/ カウンセリング</span></a></li>
-                    <li><a href="#salon"><span class="menu-en">Online Salon</span><span class="menu-ja">/ オンラインサロン</span></a></li>
-                    <li><a href="#contact"><span class="menu-en">Contact</span><span class="menu-ja">/ お問い合わせ</span></a></li>
+                    <li><a class="menu-link" href="#top"><span class="menu-en">Top</span><span class="menu-ja">/ トップ</span></a></li>
+                    <li><a class="menu-link" href="#concept"><span class="menu-en">Concept</span><span class="menu-ja">/ 私の思い</span></a></li>
+                    <li><a class="menu-link" href="#about"><span class="menu-en">About</span><span class="menu-ja">/ 私について</span></a></li>
+                    <li><a class="menu-link" href="#counseling"><span class="menu-en">Counseling</span><span class="menu-ja">/ カウンセリング</span></a></li>
+                    <li><a class="menu-link" href="#salon"><span class="menu-en">Online Salon</span><span class="menu-ja">/ オンラインサロン</span></a></li>
+                    <li><a class="menu-link"href="#contact"><span class="menu-en">Contact</span><span class="menu-ja">/ お問い合わせ</span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -105,7 +105,7 @@
                 <section id="about" class="section">
                     <div class="section__inner about__inner maxW mC">
                         <h2 class="h2 js-scroll-visible">Who I Am</h2>
-                        <p class="about_heading p15 js-scroll-visible" delay="15">こんにちは、万年ダイエッターだったMyunです！</p>
+                        <p class="about_heading p15 js-scroll-visible">こんにちは、万年ダイエッターだったMyunです！</p>
                         <div class="about__content">
                             <div class="about__leftContent">
                                 <div class="about__img imgWrap">
@@ -171,6 +171,7 @@
                                 </div>
                             </div>
                             <div class="hover-cursor slide-counsel-imgs" data="counseling">
+                                <p class="sp-click only-sp">＼click／</p>
                                 <div class="content__imgList">
                                     <div class="content__imgListInner" list="counseling">
                                         <div class="content__img imgWrap" order="1"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
@@ -209,6 +210,7 @@
                             </div>
 
                             <div class="hover-cursor slide-salon-imgs" data="salon">
+                                <p class="sp-click only-sp">＼click／</p>
                                 <div class="content__imgList">
                                     <div class="content__imgListInner" list="salon">
                                         <div class="content__img imgWrap" order="1"><div class="imgAnime" data-scroll data-scroll-speed="1" data-scroll-direction="vertical"><img src="img/counseling1.jpg" alt="" class="img"></div></div>
@@ -243,7 +245,7 @@
                 </section>
                 <footer class="footer" style="background-color: #fff;">
                     <div class="footer__inner"></div>
-                    <div style="height: 200px"></div>
+                    <div style="height: 800px"></div>
                 </footer>
                 
                 
@@ -325,6 +327,10 @@
                     }
                 })
             })
+        
+            $(".menu-link").on("click", function(){
+                $(".checkbox-toggle").prop("checked", false)
+            });
         } else {
             $(window).on('wheel', function() {
                 const $mv = $(".mv");

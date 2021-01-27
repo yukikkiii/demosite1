@@ -88,11 +88,12 @@ function carMouseOver(){
       "mousemove": function(){
         windowW / 2 > mouseX ? cursor.removeClass("right").addClass("left") : cursor.removeClass("left").addClass("right");
       },
-      "click": function(){
+      "click": function(e){
+        console.log("e is ", e.pageX)
+        windowW / 2 > e.pageX ? cursor.removeClass("right").addClass("left") : cursor.removeClass("left").addClass("right");
         if (scrollNow) return;
         scrollNow = true
         var dir = cursor.hasClass("right") ? "right": "left";
-        console.log(dir)
         var imgsList = $(this).find(".content__img");
         var imgCnt = imgsList.length;
         
